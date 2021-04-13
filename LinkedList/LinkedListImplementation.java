@@ -1,4 +1,6 @@
 //This is a node in linkedList. It has head -> Starting node, tail->last node, and data is the the number stored
+import java.util.*;
+
 class Node{ 
     static Node head = null; //head ref (Static since it keeps changing and shouldnt change for new object)
     Node next;
@@ -84,9 +86,47 @@ public class LinkedListImplementation {
         }
 
     }
+    public static void delete(){
+        Node p = Node.head;
+        Node q = null;
+        Node r = null;
+        while(p!=null){
+           r = q;
+           q = p;
+           p = p.next;
+        }
+         Node.tail = r;
+        Node.tail.next = null;
+        
+        
+    }
+    public static void prevConnect(){
+        //1->2->3->4->5->6->7->8->9
+        //1-9->2-8->3->7->4->6->5
+        // p = Head
+        // q = Tail 
+        // Temp = p.next
+        // q.next = temp
+
+    }
+    public static void reverse(){
+        //p ->head
+        //q->null
+        //r->null
+        Node p = Node.head;
+        Node q = null;
+        Node r = null;
+        while(p!=null){
+            r = q;
+            q = p;
+            p = p.next;
+            q.next = r;
+        }
+        Node.head = q;
+    }
 
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
         add(10);
         add(20);
         add(30);
@@ -94,9 +134,27 @@ public class LinkedListImplementation {
         add(50);
         add(70);
         addFirst(60);
-        add(3,69);
-        add(4,699);
+        add(80);
+        
+        System.out.println("before delet");
         display();
+        // add(3,69);
+        // add(4,699);
+        delete();
+        System.out.println("after del");
+        display();
+        System.out.println("reversing");
+        reverse();
+        display();
+        add(90);
+        display();
+        // int num = Integer.MAX_VALUE;
+        // while(num!=-1){
+        //     num = sc.nextInt();
+        //     if(num!=-1){
+        //         add(num);
+        //     } 
+        // }
         
     }
 }
