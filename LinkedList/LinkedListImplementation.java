@@ -113,6 +113,30 @@ public class LinkedListImplementation {
         //p ->head
         //q->null
         //r->null
+        //1->2->3->4->5
+        
+        //r = null
+        //q = 1
+        //p = 2
+        
+        //r = 1
+        //q = 2
+        //p = 3
+        
+        //r = 2
+        //q = 3
+        //p = 4
+        
+        //r = 3
+        //q = 4
+        //p = 5
+        
+        //r = 4
+        //q = 5
+        //p = null
+        
+        //head = 5
+        ///5->4->
         Node p = Node.head;
         Node q = null;
         Node r = null;
